@@ -20,5 +20,10 @@ pipeline {
 				bash 'docker build /home --tag="5.188.140.219:8123/webapp"'
 			}
 		}
+		stage ('Push image') {
+			steps {
+				bash 'docker push 5.188.140.219:8123/webapp'
+			}
+		}
 	}
 }
