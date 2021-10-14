@@ -4,4 +4,5 @@ git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git /home/app
 
 mvn package -f /home/app
 
+docker build . --tag="5.188.140.219:8123/build"
 docker build /home --tag="5.188.140.219:8123/webapp"
