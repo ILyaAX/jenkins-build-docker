@@ -3,6 +3,8 @@ pipeline {
 		docker {
 			image '89.208.222.153:8123/build'
 			args '-v /var/run/docker.sock:/var/run/docker.sock -u root'
+			registryCredentialsId '642e0ecf-859e-4a08-bc5a-c56e1cc89ac8'
+			registryUrl '89.208.222.153:8123'
 		}
 	}
 	stages {
@@ -23,9 +25,7 @@ pipeline {
 		}
 		stage ('Push image') {
 			steps {
-				withCredentials([usernamePassword(credentialsId: '642e0ecf-859e-4a08-bc5a-c56e1cc89ac8', usernameVariable: 'admin')]) {
-					sh 'docker push 89.208.222.153:8123/webapp'
-				}
+				sh 'docker push 89.208.222.153:8123/webapp'
 			}
 		}
 	}
