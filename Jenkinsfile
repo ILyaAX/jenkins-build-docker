@@ -2,7 +2,6 @@ pipeline {
 	agent {
 		docker {
 			image '89.208.222.153:8123/build'
-			#args '-v /var/run/docker.sock:/var/run/docker.sock -u root'
 		}
 	}
 	stages {
