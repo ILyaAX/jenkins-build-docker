@@ -23,7 +23,7 @@ pipeline {
 		}
 		stage ('Push image') {
 			steps {
-				withCredentials([usernamePassword(credentialsId: '642e0ecf-859e-4a08-bc5a-c56e1cc89ac8', usernameVariable: 'USERNAME')]) {
+				withCredentials([usernamePassword(credentialsId: '642e0ecf-859e-4a08-bc5a-c56e1cc89ac8', usernameVariable: 'admin')]) {
 					sh 'docker push 89.208.222.153:8123/webapp'
 				}
 			}
