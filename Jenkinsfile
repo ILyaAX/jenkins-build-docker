@@ -1,7 +1,7 @@
 pipeline {
 	agent {
 		docker {
-			image '5.188.140.219:8123/build'
+			image '89.208.222.153:8123/build'
 		}
 	}
 	stages {
@@ -17,12 +17,12 @@ pipeline {
 		}
 		stage ('Build docker-image with webapp') {
 			steps {
-				bash 'docker build /home --tag="5.188.140.219:8123/webapp"'
+				bash 'docker build /home --tag="89.208.222.153:8123/webapp"'
 			}
 		}
 		stage ('Push image') {
 			steps {
-				bash 'docker push 5.188.140.219:8123/webapp'
+				bash 'docker push 89.208.222.153:8123/webapp'
 			}
 		}
 	}
